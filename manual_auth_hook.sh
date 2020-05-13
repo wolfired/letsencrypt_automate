@@ -43,7 +43,7 @@ function digTXTRecord() {
 }
 
 times=0
-for ((;;)) do
+for ((;;)); do
     digTXTRecord
     if ((0 == $?)); then
         break
