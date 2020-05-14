@@ -28,7 +28,7 @@ function updateOrAddRecord() {
     if [[ -z "$rrid" ]]; then
         echo todo
     elif [[ "$rrvalue" != "$value" ]]; then
-        request_dnsUpdateRecord $domain $rrid $rrhost $rrvalue $rrdistance $rrttl
+        request_dnsUpdateRecord $domain $rrid $rrhost $rrvalue $rrdistance $rrttl 1>/dev/null 2>&1
     fi
 }
 
@@ -42,13 +42,12 @@ function digTXTRecord() {
     return 1
 }
 
-times=0
+minutes=0
 for ((;;)); do
     digTXTRecord
     if ((0 == $?)); then
         break
     fi
-    times=$((times+1))
-    echo "wait in $times minute"
+    minutes=$((minutes+1))
     sleep 60
 done

@@ -187,7 +187,7 @@ function request_dnsAddRecord() {
     local rrttl=${6:-7207}
 
     local response=$(echo $(operation dnsAddRecord domain=$domain\&rrtype=$rrtype\&rrhost=$rrhost\&rrvalue=$rrvalue\&rrdistance=$rrdistance\&rrttl=$rrttl))
-    echo $response | print_standard_response
+    echo $response
 }
 # request_dnsAddRecord wolfired.com TXT abcde edcba
 # request_dnsListRecords wolfired.com
@@ -212,7 +212,7 @@ function request_dnsUpdateRecord() {
     local rrttl=${6:-7207}
 
     local response=$(echo $(operation dnsUpdateRecord domain=$domain\&rrid=$rrid\&rrhost=$rrhost\&rrvalue=$rrvalue\&rrdistance=$rrdistance\&rrttl=$rrttl))
-    echo $response | print_standard_response
+    echo $response
 }
 # request_dnsUpdateRecord
 
@@ -223,7 +223,7 @@ function request_dnsDeleteRecord() {
     local rrid=${2:?}
 
     local response=$(echo $(operation dnsDeleteRecord domain=$domain\&rrid=$rrid))
-    echo $response | print_standard_response
+    echo $response
 }
 # request_dnsDeleteRecord wolfired.com 58db68e7d63d82119706d5e7a61ddf51
 # request_dnsListRecords wolfired.com
