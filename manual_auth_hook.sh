@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-source ./namesilo_mate.sh
+source $AUTOMATH_ROOT/namesilo_mate.sh
 
 # $CERTBOT_DOMAIN "The domain being authenticated"
 # $CERTBOT_VALIDATION "The validation string"
