@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-AUTOMATH_ROOT="$(dirname $0)"
+export AUTOMATH_ROOT="$(dirname $0)"
 
 DOMAIN=${1:?}
 EMAIL=${email+"--email ${email}"}
