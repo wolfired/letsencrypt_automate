@@ -27,7 +27,6 @@ $TEST_CERT \
 --work-dir $DIR_WORK \
 --non-interactive \
 --agree-tos \
---manual-public-ip-logging-ok \
 --manual-auth-hook $AUTOMATH_ROOT/manual_auth_hook.sh \
 --manual-cleanup-hook $AUTOMATH_ROOT/manual_cleanup_hook.sh \
 --domains \*.$DOMAIN
