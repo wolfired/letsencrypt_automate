@@ -11,6 +11,7 @@ TEST_CERT=${test_cert+'--test-cert'}
 DIR_CONFIG=${dir_config:-"$AUTOMATH_ROOT/.dir_config"}
 DIR_LOGS=${dir_logs:-"$AUTOMATH_ROOT/.dir_logs"}
 DIR_WORK=${dir_work:-"$AUTOMATH_ROOT/.dir_work"}
+DIR_CPTO=${dir_cpto:-""}
 
 mkdir -p {$DIR_CONFIG,$DIR_LOGS,$DIR_WORK}
 
@@ -30,3 +31,7 @@ $TEST_CERT \
 --manual-auth-hook $AUTOMATH_ROOT/manual_auth_hook.sh \
 --manual-cleanup-hook $AUTOMATH_ROOT/manual_cleanup_hook.sh \
 --domains \*.$DOMAIN
+
+if [[ -n $DIR_CPTO && -d $(dirname "$DIR_CPTO") ]]; then
+    cp -RTlv "$DIR_CONFIG/live" "$DIR_CPTO"
+fi
