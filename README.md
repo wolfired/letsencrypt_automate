@@ -5,6 +5,7 @@ Auto script for obtaining [LetsEncrypt](https://letsencrypt.org/) certificates, 
 # Usage
 
 ```bash
+sudo pacman -S certbot dnsutils
 email=your@email.com ./certbot_mate.sh domain.com
 ```
 
