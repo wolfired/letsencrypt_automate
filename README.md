@@ -12,3 +12,7 @@ email=your@email.com ./certbot_mate.sh domain.com
 ```bash
 for ((;;)); do dig -t txt _acme-challenge.{domain0.com,domain1.com} @8.8.8.8 | grep -P -o "^_acme.+"; sleep 8; done
 ```
+
+```bash
+sudo cp -R .dir_config/archive/domain0.com-0001/ ~/workspace_docker/nginx/conf/encrypt/archive/
+```
